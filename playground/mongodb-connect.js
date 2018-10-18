@@ -23,21 +23,21 @@ MongoClient.connect(
     //   }
     // );
 
-    // db.collection("Users").insertOne(
-    //   {
-    //     name: "Stefan",
-    //     age: 23,
-    //     location: "Uzice"
-    //   },
-    //   (err, result) => {
-    //     if (err) {
-    //       return console.log("Unable to insert user");
-    //     }
+    db.collection("Users").insertOne(
+      {
+        name: "Stefan",
+        age: 23,
+        location: "Uzice"
+      },
+      (err, result) => {
+        if (err) {
+          return console.log("Unable to insert user");
+        }
 
-    //     console.log(result.ops[0]._id.getTimestamp());
-    //   }
-    // );
+        console.log(result.ops[0]._id.getTimestamp());
+      }
+    );
 
-    db.close();
+    // db.close();
   }
 );
