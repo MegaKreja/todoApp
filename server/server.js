@@ -44,11 +44,10 @@ app.get("/todos/:id", (req, res) => {
 
   Todo.findById(id)
     .then(todo => {
-      if (todo) {
-        res.send({ todos });
-      } else {
+      if (!todo) {
         res.send(404).send();
       }
+      res.send({ todo });
     })
     .catch(() => res.status(400).send());
 });
